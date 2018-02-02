@@ -40,6 +40,43 @@ brew install php71-imagick
 
 Reference: https://developerjack.com/blog/2016/installing-php71-with-homebrew/
 
+### Install MariaDB
+
+```
+brew install mariadb
+brew services start mariadb
+```
+
+Reference: https://mariadb.com/kb/en/library/installing-mariadb-on-macos-using-homebrew/
+
+You'll then need to update the root password.
+This is a little unsure, but worked via stopping MariaDb
+
+`brew services stop mariadb`
+Then reloading without grant tables? 
+`mysql.server restart --skip-grant-tables`
+and then logging into MariaDB...
+`mysql -u root`
+
+Then the following to update the password...
+```
+UPDATE mysql.user SET authentication_string = PASSWORD('new_password') WHERE User = 'root' AND Host = 'localhost';
+```
+Obviously replacing the 'password'.
+
+Then whilst still logged in...
+`FLUSH PRIVILGES`
+
+Then log out of the database and restart MariaDB
+`brew services restart mariadb`
+
+Test that the new password works by logging in...
+`mysql -u root -p`
+
+and it should ask for the password you just set.
+
+Reference: https://www.digitalocean.com/community/tutorials/how-to-reset-your-mysql-or-mariadb-root-password
+
 ### Install Composer Globally
 
 ```
