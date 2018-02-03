@@ -50,24 +50,11 @@ brew services start mariadb
 Reference: https://mariadb.com/kb/en/library/installing-mariadb-on-macos-using-homebrew/
 
 You'll then need to update the root password.
-This is a little unsure, but worked via stopping MariaDb
 
-`brew services stop mariadb`
-Then reloading without grant tables? 
-`mysql.server restart --skip-grant-tables`
-and then logging into MariaDB...
-`mysql -u root`
+Not sure best way to do this, tried with command line, but getting issues, so found I could change via Sequel Pro.
+Log into MariaDB with `root` and no password, then go to Database > User Accounts and update there.
 
-Then the following to update the password...
-```
-UPDATE mysql.user SET authentication_string = PASSWORD('new_password') WHERE User = 'root' AND Host = 'localhost';
-```
-Obviously replacing the 'password'.
-
-Then whilst still logged in...
-`FLUSH PRIVILGES`
-
-Then log out of the database and restart MariaDB
+Restart MariaDB
 `brew services restart mariadb`
 
 Test that the new password works by logging in...
@@ -119,6 +106,14 @@ followed by
 then, if you want to change the development tld...
 
 `valet domain dev` - dev in this case.
+
+### Craft Scripts
+
+Update your .bash-profile to run the Craft 2.5 scripts.
+```alias syncAll="cd scripts; chmod 775 pull_db.sh pull_assets.sh; ./pull_db.sh; ./pull_assets.sh; chmod 644 pull_db.sh pull_assets.sh; cd ../;"alias syncDb="cd scripts; chmod 775 pull_db.sh; ./pull_db.sh; chmod 644 pull_db.sh; cd ../;"alias syncAssets="cd scripts; chmod 775 pull_db.sh; ./pull_assets.sh; chmod 644 pull_db.sh; cd ../;"
+```
+Reload your bash profile
+`. ~/.bash_profile`
 
 
 
