@@ -110,7 +110,8 @@ then, if you want to change the development tld...
 ### Craft Scripts
 
 Update your .bash-profile to run the Craft 2.5 scripts.
-```alias syncAll="cd scripts; chmod 775 pull_db.sh pull_assets.sh; ./pull_db.sh; ./pull_assets.sh; chmod 644 pull_db.sh pull_assets.sh; cd ../;"alias syncDb="cd scripts; chmod 775 pull_db.sh; ./pull_db.sh; chmod 644 pull_db.sh; cd ../;"alias syncAssets="cd scripts; chmod 775 pull_db.sh; ./pull_assets.sh; chmod 644 pull_db.sh; cd ../;"
+```
+alias syncAll="cd scripts; chmod 775 pull_db.sh pull_assets.sh; ./pull_db.sh; ./pull_assets.sh; chmod 644 pull_db.sh pull_assets.sh; cd ../;"alias syncDb="cd scripts; chmod 775 pull_db.sh; ./pull_db.sh; chmod 644 pull_db.sh; cd ../;"alias syncAssets="cd scripts; chmod 775 pull_db.sh; ./pull_assets.sh; chmod 644 pull_db.sh; cd ../;"
 ```
 Reload your bash profile
 `. ~/.bash_profile`
