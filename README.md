@@ -34,6 +34,7 @@ brew tap homebrew/homebrew-php
 ```
 ```
 brew install php71
+brew services start homebrew/php/php71
 brew install php71-mcrypt
 brew install php71-imagick
 ```
