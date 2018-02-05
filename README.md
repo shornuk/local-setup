@@ -35,6 +35,10 @@ brew tap homebrew/homebrew-php
 ```
 brew install php71
 brew services start homebrew/php/php71
+```
+
+### Install PHP Extensions
+```
 brew install php71-mcrypt
 brew install php71-imagick
 ```
@@ -108,6 +112,8 @@ then, if you want to change the development tld...
 
 `valet domain dev` - dev in this case.
 
+
+## Optional
 ### Craft Scripts
 
 Update your .bash-profile to run the Craft 2.5 scripts.
@@ -116,6 +122,26 @@ alias syncAll="cd scripts; chmod 775 pull_db.sh pull_assets.sh; ./pull_db.sh; ./
 ```
 Reload your bash profile
 `. ~/.bash_profile`
+
+### SSH Keys
+
+Generate ssh key
+```
+ssh-keygen -t rsa
+```
+Then use `ssh-copy-id` to copy the key to servers.
+
+Install via brew first
+```
+brew install ssh-copy-id
+```
+
+Then add the key via 
+```
+ssh-copy-id user@198.00.100.0
+```
+
+Done.
 
 
 
