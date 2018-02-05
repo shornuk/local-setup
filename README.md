@@ -142,6 +142,13 @@ ssh-copy-id user@198.00.100.0
 ```
 Reference: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
 
+Or, if adding manually
+```
+pbcopy < ~/.ssh/id_rsa.pub
+```
+will copy to clipboard.
+Reference: https://www.digitalocean.com/community/questions/copy-ssh-key-to-clipboard
+
 Done.
 
 
