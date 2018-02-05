@@ -140,6 +140,7 @@ Then add the key via
 ```
 ssh-copy-id user@198.00.100.0
 ```
+Reference: https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
 
 Done.
 
