@@ -147,6 +147,7 @@ Or, if adding manually
 pbcopy < ~/.ssh/id_rsa.pub
 ```
 will copy to clipboard.
+
 Reference: https://www.digitalocean.com/community/questions/copy-ssh-key-to-clipboard
 
 Done.
