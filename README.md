@@ -38,9 +38,11 @@ brew services start homebrew/php/php71
 ```
 
 ### Install PHP Extensions
+Install the extensions for Mcrypt (needed for Craft 2 sites), ImageMagick, and Internationalization (recommended for Craft 3)
 ```
 brew install php71-mcrypt
 brew install php71-imagick
+brew install php71-intl
 ```
 
 Reference: https://developerjack.com/blog/2016/installing-php71-with-homebrew/
