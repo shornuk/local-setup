@@ -150,6 +150,34 @@ will copy to clipboard.
 
 Reference: https://www.digitalocean.com/community/questions/copy-ssh-key-to-clipboard
 
+### PHP Memory Limit
+
+Craft shows warning in Utilities that PHP Memory Limit should be 256M. 
+To change, check which PHP you are using...
+
+```
+php -r 'phpinfo();' | grep 'php.ini'
+```
+If following the install guide above, the chances are that it is PHP71 as installed via Brew. So the php.ini. file will be located...
+
+```
+/usr/local/etc/php/7.1/php.ini
+```
+I found I also needed to update the `php-memory-limits.ini` file that is located...
+
+```
+/usr/local/etc/php/7.1/conf.d/php-memory-limits.ini
+```
+Update all these from 128M > 256M then restart PHP.
+
+```
+brew services restart php71
+```
+or
+```
+valet restart
+```
+
 Done.
 
 
